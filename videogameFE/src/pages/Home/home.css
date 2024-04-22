@@ -1,0 +1,19 @@
+
+.mainHome {
+   width: 100%;
+}
+
+.mainHome__titleContainer{
+   width: 100%;
+}
+
+.mainHome__someTitleContainer{
+   color: aliceblue;
+   height: 150px;
+   width: 100%;
+}
+
+.mainHome__recomendedTitlesContainer{
+   min-height: 400px;
+   width: 100%;
+}

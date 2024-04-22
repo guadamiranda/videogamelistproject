@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&display=swap');
+
+.gameDetailContainer{
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+    width: 68%;
+}
+
+.gameDetailMainImageContainer{
+    height: 500px;
+}
+.gameDetailMainImage{
+    border-radius: 8px;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    width: 100%;
+}
+
+.gameDetailContainer span {
+    font-size: 17px;
+}
+
+.platformIcon{
+    color: #2195f379;
+    height: 20px !important;
+    width: 20px !important;
+}

@@ -1,0 +1,12 @@
+.loadingContainer {
+  height: 128px;
+  margin-top: 90px;
+  width: 143px;
+}
+
+.loadingImage {
+  background-image: url("./assets/gif/mario.gif");
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}

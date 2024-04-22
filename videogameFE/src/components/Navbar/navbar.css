@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&display=swap');
+
+.navbarContainer{
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+    left: 0;
+    padding: 15px 15px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.navbarText{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.navbarText:hover{
+    color: #2196F3;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.iconLogOut{
+    height: 20px !important;
+    width: 20px !important;
+}
+
+.textOpaco{
+    color: rgba(255, 255, 255, 0.548);  
+}

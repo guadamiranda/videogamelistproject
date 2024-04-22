@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+.welcomeContainer{
+    height: 550px;
+    width: 100%;
+    
+}
+
+.welcomeImage{
+    background-image: url("../../assets/homePage.gif");
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    mask-image: linear-gradient(black 80%, transparent);
+}
+
+.welcomeTitle {
+    color: white;
+    height: 550px;
+    width: 100%;
+    padding-left: 40px; 
+}
+
+.welcomePrincipalTitle, .welcomeSecundaryTitle{
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    text-shadow: 10px 10px 19px rgba(0, 0, 0, 1);
+}
+
+.welcomePrincipalTitle{
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.welcomeSecundaryTitle{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.welcomeSecundaryButton{
+    margin-top: 14px;
+}
+
+.card-overlay {
+    background: rgba(0, 0, 0, 0.4);  
+    height: 550px;
+    width: 100%;
+}

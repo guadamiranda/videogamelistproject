@@ -1,0 +1,22 @@
+
+.iconTagStyle{
+    color: #2195f379;
+    width: 20px !important;
+    height: 20px !important;
+    transition: 0.5s;
+}
+
+.tagContainer:hover .iconTagStyle{
+    color: #2196F3;
+    transition: 0.5s;
+}
+
+.tagContainer:hover{
+    color: #2196F3;
+    transition: 0.5s;
+    cursor: default;
+}
+
+.tagContainer span{
+    margin-right: 8px;
+}

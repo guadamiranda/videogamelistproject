@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
+
+.navbarImgContainer {
+  height: 60px;
+  width: 100%;
+}
+
+.navbarImgImage {
+  background-image: url("../../pages/Home/assets/homePage.gif");
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  mask-image: linear-gradient(black 80%, transparent);
+}
+
+.cardNavbar-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  height: 60px;
+  width: 100%;
+}
