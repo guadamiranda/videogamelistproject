@@ -14,6 +14,8 @@ app.use('/api/users', usersRoute)
 
 app.use('/api/authenticate', authRoute)
 
+app.use('/api/favorites', favoritesRoute)
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });

@@ -1,0 +1,7 @@
+
+export const IN_PROGRESS_GAME_CODE = "IN_PROGRESS"
+
+export const FINISHED_GAME_CODE = "FINISHED"
+
+export const TO_PLAY_GAME_CODE = "TO_PLAY"
+
