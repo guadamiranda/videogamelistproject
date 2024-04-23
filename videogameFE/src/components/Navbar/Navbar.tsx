@@ -9,12 +9,17 @@ const Navbar = () => {
         <Link to="/" className="navbarText">
           Home
         </Link>
-        <div className="navbarText">Listados</div>
+        <Link to="/myList" className="navbarText">
+          Listados
+        </Link>
         <Link to="/titles" className="navbarText">
           Títulos
         </Link>
       </div>
-      <Link to='/login' className="navbarText d-flex align-items-center gap-2 textOpaco">
+      <Link
+        to="/login"
+        className="navbarText d-flex align-items-center gap-2 textOpaco"
+      >
         Cerrar sesión <LogoutIcon className="iconLogOut" />
       </Link>
     </div>
