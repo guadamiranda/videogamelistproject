@@ -1,4 +1,5 @@
 const usersRoute = require('./routes/users');
+const authRoute = require('./routes/auth');
 const initDB = require('./config/db');
 const express = require("express");
 const cors = require("cors")
@@ -10,6 +11,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/users', usersRoute)
+
+app.use('/api/authenticate', authRoute)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

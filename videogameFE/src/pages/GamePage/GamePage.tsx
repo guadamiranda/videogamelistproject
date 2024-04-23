@@ -2,7 +2,6 @@ import GameMainDetails from "./components/GameMainDetails/GameMainDetails";
 import SectionTitle from "../../components/sectionTitle/sectionTitle";
 import NavbarImg from "../../components/NavbarImg/NavbarImg";
 import { useLocation } from "react-router-dom";
-import "./gamePage.css";
 
 const GamePage = () => {
   let { state } = useLocation();

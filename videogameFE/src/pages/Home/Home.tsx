@@ -2,7 +2,7 @@ import GameCardSection from "./components/gameCardsSection/gameCardsSection";
 import SectionTitle from "../../components/sectionTitle/sectionTitle";
 import Welcome from "./components/welcome/Welcome";
 import "./home.css";
-import {getAllUsers, addUser} from '../../services/getAllUsers.js'
+import {getAllUsers} from '../../services/getAllUsers.js'
 import { useEffect } from "react";
 
 const MainHome = () => {
@@ -11,19 +11,9 @@ const MainHome = () => {
     .then((res) => console.log(res))
   }
 
-  const bodyExample = {
-    id: "5",
-    name: "Popipo",
-    password: "12455yy7768"
-  }
-
-  const addUserFromAPI = () => {
-    Promise.all([addUser(bodyExample, 'SoyUnQueryParam')]).then((res:any) => console.log(res))
-  }
 
   useEffect(() => {
     getAllUsersFromAPI()
-    addUserFromAPI()
   }, [])
 
   return (

@@ -1,15 +1,9 @@
 import './buttonLogin.css'
 
-const ButtonLogin = (onClickFunction: any) => {
-
-    const handleClick = () => {
-        onClickFunction.onClickFunction(true)
-      };
-
+const ButtonLogin = () => {
     return(
-        <div className='buttonLoginContainer d-flex justify-content-center mt-3' onClick={() => handleClick()}>
-            Ingresar
-        </div>
+        <input className='buttonLoginContainer d-flex justify-content-center mt-3' value='Ingresar' type='submit'>
+        </input>
     )
 }
 
