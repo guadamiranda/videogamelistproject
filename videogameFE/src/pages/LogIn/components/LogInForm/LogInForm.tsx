@@ -2,15 +2,22 @@ import { loginUser } from "../../services/loginUser.js";
 import ButtonLogin from "../ButtonLogin/ButtonLogin";
 import { useForm } from "react-hook-form";
 import "./logInForm.css";
+import { useContext } from "react";
+import { userContext } from '../../../../App.tsx'
 
 const LogInForm = () => {
   const { register, handleSubmit } = useForm();
+  const userFromContext = useContext(userContext)
+
+  const loginUserInContext = (user:any) => {
+    userFromContext.setUser({name: user.name, email: user.mail, password: user.password, userName: user.userName, userId: user._id})
+  }
 
   const onSubmit = async (data: any) => {
     const body = data;
 
     await loginUser(body)
-      .then((res:any) => console.log(res))
+      .then((res:any) => loginUserInContext(res.data[0]))
       .catch((error: any) => console.log(error));
   };
 
