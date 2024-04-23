@@ -1,10 +1,9 @@
 import RouterList from "./components/Router/RouterList";
+import { userContext } from "./contexts/userContext";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import { createContext, useState } from "react";
+import { useState } from "react";
 import "./mainHome.css";
-
-export const userContext = createContext({});
 
 function App() {
   const [user, setUser] = useState(null);
