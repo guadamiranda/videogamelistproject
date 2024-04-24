@@ -1,0 +1,10 @@
+
+.linkSeeAllGames{
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.linkSeeAllGames:hover{
+    color: #2196F3;
+    transition: 0.5s;
+}
