@@ -1,3 +1,4 @@
+import AllGameList from "../../pages/AllGameList/AllGameList";
 import GamePage from "../../pages/GamePage/GamePage";
 import Register from "../../pages/Register/Register";
 import { Route, Routes } from "react-router-dom";
@@ -15,6 +16,7 @@ const RouterList = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/myList" element={<MyList />} />
+      <Route path="/allGameList" element={<AllGameList />} />
     </Routes>
   );
 };
