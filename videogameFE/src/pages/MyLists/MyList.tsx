@@ -1,7 +1,9 @@
-import NavbarImg from "../../components/NavbarImg/NavbarImg";
 import SectionTitle from "../../components/sectionTitle/sectionTitle";
-import GameListCard from "./components/GameListCard/GameListCard";
 import NoGameMessage from "./components/NoGameMessage/NoGameMessage";
+import GameListCard from "./components/GameListCard/GameListCard";
+import NavbarImg from "../../components/NavbarImg/NavbarImg";
+import GameStateEnum  from "../../models/enums/gameStateEnum";
+import { Link } from "react-router-dom";
 import "./myList.css";
 
 const MyList = () => {
@@ -10,11 +12,13 @@ const MyList = () => {
       <NavbarImg />
       <SectionTitle title="Terminados" />
       <GameListCard />
-      <span className="linkSeeAllGames">Ver todos los juegos</span>
+      <Link to='/allGameList' state={{ stateGame: GameStateEnum.GAME_STATE_FINISHED }}><span className="linkSeeAllGames">Ver todos los juegos</span></Link>
       <SectionTitle title="Jugando" />
       <NoGameMessage />
+      <Link to='/allGameList' state={{ stateGame: GameStateEnum.GAME_STATE_PLAYING }}><span className="linkSeeAllGames">Ver todos los juegos</span></Link>
       <SectionTitle title="Proximos" />
       <NoGameMessage />
+      <Link to='/allGameList' state={{ stateGame: GameStateEnum.GAME_STATE_TO_PLAY }}><span className="linkSeeAllGames">Ver todos los juegos</span></Link>
     </div>
   );
 };

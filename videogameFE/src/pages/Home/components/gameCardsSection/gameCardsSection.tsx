@@ -1,7 +1,7 @@
 import GameCard from "../../../../components/gameCard/GameCards.js";
 import Loading from "../../../../components/Loading/Loading.js";
 import { getAllGames } from "../../../../services/getAllGames";
-import { gameModel } from "../../models/gameModel.js";
+import { gameModel } from "../../../../models/gameModel.js";
 import { useEffect, useState } from "react";
 import "./gameCardsSection.css";
 

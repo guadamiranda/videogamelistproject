@@ -1,7 +1,7 @@
-import { gameModel } from "../pages/Home/models/gameModel";
-import { genereModel } from "../pages/Home/models/genereModel";
-import { platformModel } from "../pages/Home/models/platformModel";
-import { tagModel } from "../pages/Home/models/tagModel";
+import { gameModel } from "../models/gameModel";
+import { genereModel } from "../models/genereModel";
+import { platformModel } from "../models/platformModel";
+import { tagModel } from "../models/tagModel";
 import {
   responseGame,
   responseGenere,
