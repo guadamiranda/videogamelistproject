@@ -10,6 +10,7 @@ const MyList = () => {
       <NavbarImg />
       <SectionTitle title="Terminados" />
       <GameListCard />
+      <span className="linkSeeAllGames">Ver todos los juegos</span>
       <SectionTitle title="Jugando" />
       <NoGameMessage />
       <SectionTitle title="Proximos" />
