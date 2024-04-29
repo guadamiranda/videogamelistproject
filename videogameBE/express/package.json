@@ -1,5 +1,6 @@
 {
   "name": "express",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,5 +14,8 @@
     "express": "^4.19.2",
     "mongoose": "^8.3.2",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2"
   }
 }
