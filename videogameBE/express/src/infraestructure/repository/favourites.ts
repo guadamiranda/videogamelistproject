@@ -1,5 +1,5 @@
-import model from '../repository/models/favorites'
-import { favoriteModel } from '../../domain/models/favorite'
+import { favoriteModel } from '../../domain/models/favourite';
+import model from '../repository/models/favorites';
 
 const buildfavoriteModel = (favoriteCreated: any): favoriteModel => {
     return {

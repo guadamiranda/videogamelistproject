@@ -1,4 +1,4 @@
-import favoriteRoute from './infraestructure/controllers/favorites/favorites'
+import favoriteRoute from './infraestructure/controllers/favourites/favourites'
 import usersRoute from './infraestructure/controllers/users/users';
 import authRoute from './infraestructure/controllers/users/auth';
 import initDB from './infraestructure/repository/config/db';

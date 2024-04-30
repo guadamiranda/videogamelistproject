@@ -1,6 +1,6 @@
-import { getUserfavoritesByList } from '../../../application/favorites/getAllfavorites';
-import { createfavorite } from '../../../application/favorites/createfavorite';
-import { favoriteModel } from '../../../domain/models/favorite';
+import { getUserfavoritesByList } from '../../../application/favourites/getAllFavourites';
+import { createfavorite } from '../../../application/favourites/createFavourite';
+import { favoriteModel } from '../../../domain/models/favourite';
 import express from 'express'
 
 const router = express.Router();
