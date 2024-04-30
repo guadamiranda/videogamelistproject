@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&display=swap');
 
 .buttonLoginContainer{
+    background-color: transparent;
     border: 2px solid #2196F3;
     border-radius: 8px;
     color: #2196F3;

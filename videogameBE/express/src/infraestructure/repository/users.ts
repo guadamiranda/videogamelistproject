@@ -28,9 +28,13 @@ const createUser = async (userModel: userModel): Promise<userModel> => {
 };
 
 const authenticateUserFromDB = async (userName:string, password:string):Promise<userModel> => {
-    const authUser = model.find({ $and: [{ name: userName }, { password: password }] })
+    const authUser = await model.find({ $and: [{ userName: userName }, { password: password }] })
 
-    return buildUserModel(authUser)
+    if (authUser.length === 0) {
+      return null;
+    }
+
+    return buildUserModel(authUser[0])
 }
 
 export { createUser, getUser, authenticateUserFromDB };

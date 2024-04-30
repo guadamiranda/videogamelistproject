@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="navbarContainer d-flex justify-content-between">
       <div className="d-flex navbarOptionContainer gap-3">
-        <Link to="/" className="navbarText">
+        <Link to="/mainHome" className="navbarText">
           Home
         </Link>
         <Link to="/myList" className="navbarText">
@@ -17,7 +17,7 @@ const Navbar = () => {
         </Link>
       </div>
       <Link
-        to="/login"
+        to="/"
         className="navbarText d-flex align-items-center gap-2 textOpaco"
       >
         Cerrar sesión <LogoutIcon className="iconLogOut" />

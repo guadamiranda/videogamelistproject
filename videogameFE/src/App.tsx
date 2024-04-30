@@ -5,16 +5,27 @@ import Navbar from "./components/Navbar/Navbar";
 import { useState } from "react";
 import "./mainHome.css";
 
+
 function App() {
-  const [user, setUser] = useState(null);
+  interface UserType {
+    name: string;
+    email: string;
+    password: string;
+    userName: string,
+    userId: string
+  }
+
+  const [user, setUser] = useState<UserType>({name: 'prueba', email: 'prueba@gmail.com', password: '12345', userName: 'prueba', userId: ''});
 
   const userContextValue = {user, setUser}
+
+  console.log(user)
 
   return (
     <userContext.Provider value={userContextValue}>
       <BrowserRouter>
         <div className="container-fluid appContainer">
-          <Navbar />
+          {user.name ? <Navbar /> : null}
           <RouterList />
         </div>
       </BrowserRouter>

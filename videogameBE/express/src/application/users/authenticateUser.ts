@@ -12,5 +12,12 @@ const buildUserModel = (user):userModel => {
 
 export const authenticateUser = async(userName:string, password:string):Promise<userModel> => {
     const userFind = await authenticateUserFromDB(userName, password)
+    
+    if(userFind === null){ 
+        return null
+    }
+    
     return buildUserModel(userFind)  
+
+    
 }

@@ -1,29 +1,51 @@
 import { userContext } from "../../../../contexts/userContext.js";
 import { loginUser } from "../../services/loginUser.js";
 import ButtonLogin from "../ButtonLogin/ButtonLogin";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import "./logInForm.css";
-import { useContext } from "react";
 
 const LogInForm = () => {
+  const [loginError, setLoginError] = useState(false);
   const { register, handleSubmit } = useForm();
-  const userFromContext = useContext(userContext)
+  const userFromContext = useContext(userContext);
 
-  const loginUserInContext = (user:any) => {
-    userFromContext.setUser({name: user.name, email: user.mail, password: user.password, userName: user.userName, userId: user._id})
-  }
+  const loginUserInContext = (user: any) => {
+    if (user.name === undefined) {
+      userFromContext.setUser({
+        name: "",
+        email: "",
+        password: "",
+        userName: "",
+        userId: "",
+      });
+      return setLoginError(true);
+    }
+
+    userFromContext.setUser({
+      name: user.name,
+      email: user.email,
+      password: user.password,
+      userName: user.userName,
+      userId: user._id,
+    });
+  };
 
   const onSubmit = async (data: any) => {
-    const body = data;
+    setLoginError(false);
 
-    await loginUser(body)
-      .then((res:any) => loginUserInContext(res.data[0]))
+    await loginUser(data)
+      .then((res: any) => loginUserInContext(res.data))
       .catch((error: any) => console.log(error));
   };
 
   return (
     <div className="logInFormContainer d-flex flex-column justify-content-center">
-      <div className="d-flex flex-column">
+      <div className="d-flex flex-column align-items-center">
+        <div className="loadingContainerLogin justify-content-center">
+          <div className="loadingImageLogin"></div>
+        </div>
+
         <span className="welcomeLogin">Bienvenido de nuevo :)</span>
         <span className="welcomeSubtituleLogin">
           Ingrese sus datos para ingresar
@@ -38,7 +60,7 @@ const LogInForm = () => {
                 className="inputLogin"
                 type="text"
                 placeholder="Usuario"
-                {...register("user")}
+                {...register("userName")}
               ></input>
             </div>
             <div className="col-md-6 col-sm-12 d-flex mt-3">
@@ -55,6 +77,12 @@ const LogInForm = () => {
         <div className="d-flex justify-content-center mt-3">
           <ButtonLogin />
         </div>
+
+        {loginError && (
+          <span className="d-flex justify-content-center errorLogin mt-3">
+            El usuario o contraseña son incorrectos :(
+          </span>
+        )}
       </form>
     </div>
   );

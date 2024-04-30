@@ -1,3 +1,13 @@
-import { createContext } from "react";
+import { Context, createContext } from "react";
 
-export const userContext = createContext({});
+interface userContextInterface {
+    user: any,
+    setUser: any
+}
+
+const initialValue: userContextInterface = {
+    user: "",
+    setUser: ""
+};
+
+export const userContext: Context<userContextInterface> = createContext(initialValue);

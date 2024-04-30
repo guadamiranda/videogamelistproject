@@ -10,10 +10,10 @@ import Login from "../../pages/LogIn/Login";
 const RouterList = () => {
   return (
     <Routes>
-      <Route path="/" element={<MainHome />} />
+      <Route path="/mainHome" element={<MainHome />} />
       <Route path="/titles" element={<Titles />} />
       <Route path="/game" element={<GamePage />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/myList" element={<MyList />} />
       <Route path="/allGameList" element={<AllGameList />} />
