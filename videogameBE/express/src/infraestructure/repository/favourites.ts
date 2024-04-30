@@ -1,22 +1,23 @@
 import model from '../repository/models/favorites'
-import { favouriteModel } from '../../domain/models/favourite'
+import { favoriteModel } from '../../domain/models/favorite'
 
-const buildFavouriteModel = (favouriteCreated: any): favouriteModel => {
+const buildfavoriteModel = (favoriteCreated: any): favoriteModel => {
     return {
-        userId: favouriteCreated.userId,
-        gameId: favouriteCreated.gameId,
-        state: favouriteCreated.state,
-        note: favouriteCreated.note,
-        comment: favouriteCreated.comment
-    } as favouriteModel;
+        userId: favoriteCreated.userId,
+        gameId: favoriteCreated.gameId,
+        state: favoriteCreated.state,
+        note: favoriteCreated.note,
+        comment: favoriteCreated.comment
+    } as favoriteModel;
   };
 
-const getFavouritesByListType = async(userId:string, listType:string):Promise<favouriteModel[]> => {
-    return await model.find({ $and: [{ userId: userId }, { state: listType }] })
+const getfavoritesByListType = async(userId:string, listType:string):Promise<favoriteModel[]> => {
+    const listFromDB = await model.find({ $and: [{ userId: userId }, { state: listType }] })
+    return listFromDB.map(favorite => buildfavoriteModel(favorite))
 }
 
-const createFavouriteFromDB = async(favorite: favouriteModel):Promise<favouriteModel> => {
-    const favouriteCreated = await model.create(
+const createfavoriteFromDB = async(favorite: favoriteModel):Promise<favoriteModel> => {
+    const favoriteCreated = await model.create(
         {
             userId: favorite.userId,
             gameId: favorite.gameId,
@@ -25,7 +26,7 @@ const createFavouriteFromDB = async(favorite: favouriteModel):Promise<favouriteM
             comment: favorite.comment
           });
 
-    return buildFavouriteModel(favouriteCreated);
+    return buildfavoriteModel(favoriteCreated);
 }
 
-export { getFavouritesByListType, createFavouriteFromDB }
+export { getfavoritesByListType, createfavoriteFromDB }

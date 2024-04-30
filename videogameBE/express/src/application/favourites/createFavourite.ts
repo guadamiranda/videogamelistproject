@@ -1,6 +1,6 @@
-import { createFavouriteFromDB } from "../../infraestructure/repository/favourites";
-import { favouriteModel } from "../../domain/models/favourite";
+import { createfavoriteFromDB } from "../../infraestructure/repository/favorites";
+import { favoriteModel } from "../../domain/models/favorite";
 
-export const createFavourite = async(favourite:favouriteModel) => {
-    return await createFavouriteFromDB(favourite)
+export const createfavorite = async(favorite:favoriteModel):Promise<favoriteModel> => {
+    return await createfavoriteFromDB(favorite)
 }

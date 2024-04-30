@@ -1,5 +1,5 @@
 
-export interface favouriteModel {
+export interface favoriteModel {
     userId: String
     gameId: String
     state: String

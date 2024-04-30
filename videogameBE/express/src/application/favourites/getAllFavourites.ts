@@ -1,5 +1,7 @@
-import { getFavouritesByListType } from '../../infraestructure/repository/favourites'
+import { favoriteModel } from '../../domain/models/favorite'
+import { getfavoritesByListType } from '../../infraestructure/repository/favorites'
 
-export const getUserFavouritesByList = async(userId:string, listType:string) => {
-    return await getFavouritesByListType(userId, listType)
+
+export const getUserfavoritesByList = async(userId:string, listType:string):Promise<favoriteModel[]> => {
+    return await getfavoritesByListType(userId, listType)
 }
