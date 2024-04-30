@@ -1,25 +1,26 @@
-import { getUsers } from '../../../application/users/getUsers';
-import { addUser } from '../../../application/users/addUser';
-import { userModel } from '../../../domain/models/user';
+import { getUsers } from "../../../application/users/getUsers";
+import { addUser } from "../../../application/users/addUser";
+import { userModel } from "../../../domain/models/user";
 import express from "express";
 
 const router = express.Router();
 
-router.get('/', (res) => {
-    const allUsers = getUsers()
-    res.send(allUsers)
-})
+router.get("/", async (req, res) => {
+  const allUsers = await getUsers();
 
-router.post('/', (req, res) => {
-    const user: userModel ={
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        userName: req.body.userName
-    }
+  res.send(allUsers);
+});
 
-    const addAnUser = addUser(user)
-    res.send(addAnUser)
-})
+router.post("/", async (req, res) => {
+  const user: userModel = {
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+    userName: req.body.userName,
+  };
 
-export default router
+  const addAnUser = await addUser(user);
+  res.send(addAnUser);
+});
+
+export default router;

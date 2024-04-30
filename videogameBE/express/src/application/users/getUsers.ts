@@ -3,5 +3,6 @@ import { userModel } from "../../domain/models/user";
 
 export const getUsers = async ():Promise<userModel[]> => {
     const allUsers = await getUser();
+
     return allUsers;
   };
