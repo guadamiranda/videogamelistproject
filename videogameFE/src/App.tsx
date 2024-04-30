@@ -15,7 +15,7 @@ function App() {
     userId: string
   }
 
-  const [user, setUser] = useState<UserType>({name: 'prueba', email: 'prueba@gmail.com', password: '12345', userName: 'prueba', userId: ''});
+  const [user, setUser] = useState<UserType>({name: '', email: '', password: '', userName: '', userId: ''});
 
   const userContextValue = {user, setUser}
 
