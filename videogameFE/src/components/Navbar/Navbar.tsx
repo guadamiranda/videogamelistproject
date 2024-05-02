@@ -1,8 +1,25 @@
+import { userContext } from "../../contexts/userContext";
+import { Link, useNavigate } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
 import "./navbar.css";
 
 const Navbar = () => {
+  const userFromContext = useContext(userContext);
+  const navigate = useNavigate();
+
+  const logOut = () => {
+    userFromContext.setUser({
+      name: "",
+      email: "",
+      password: "",
+      userName: "",
+      userId: "",
+    });
+    
+    navigate("/")
+  }
+
   return (
     <div className="navbarContainer d-flex justify-content-between">
       <div className="d-flex navbarOptionContainer gap-3">
@@ -16,12 +33,12 @@ const Navbar = () => {
           Títulos
         </Link>
       </div>
-      <Link
-        to="/"
+      <div
+        onClick={() => logOut()}
         className="navbarText d-flex align-items-center gap-2 textOpaco"
       >
         Cerrar sesión <LogoutIcon className="iconLogOut" />
-      </Link>
+      </div>
     </div>
   );
 };

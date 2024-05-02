@@ -1,6 +1,7 @@
 import { userContext } from "../../../../contexts/userContext.js";
 import { loginUser } from "../../services/loginUser.js";
 import ButtonLogin from "../ButtonLogin/ButtonLogin";
+import { useNavigate } from 'react-router-dom';
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import "./logInForm.css";
@@ -9,6 +10,7 @@ const LogInForm = () => {
   const [loginError, setLoginError] = useState(false);
   const { register, handleSubmit } = useForm();
   const userFromContext = useContext(userContext);
+  const navigate = useNavigate();
 
   const loginUserInContext = (user: any) => {
     if (user.name === undefined) {
@@ -19,6 +21,7 @@ const LogInForm = () => {
         userName: "",
         userId: "",
       });
+
       return setLoginError(true);
     }
 
@@ -29,6 +32,9 @@ const LogInForm = () => {
       userName: user.userName,
       userId: user._id,
     });
+
+    navigate('/MainHome');
+
   };
 
   const onSubmit = async (data: any) => {
