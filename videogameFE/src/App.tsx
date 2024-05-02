@@ -2,24 +2,23 @@ import RouterList from "./components/Router/RouterList";
 import { userContext } from "./contexts/userContext";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./mainHome.css";
 
-
+interface UserType {
+  name: string;
+  email: string;
+  password: string;
+  userName: string,
+  userId: string
+}
 function App() {
-  interface UserType {
-    name: string;
-    email: string;
-    password: string;
-    userName: string,
-    userId: string
-  }
-
   const [user, setUser] = useState<UserType>({name: '', email: '', password: '', userName: '', userId: ''});
-
   const userContextValue = {user, setUser}
 
-  console.log(user)
+  useEffect(() => {
+    localStorage.setItem('usuario', JSON.stringify(user));
+  }, [user])
 
   return (
     <userContext.Provider value={userContextValue}>
